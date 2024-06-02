@@ -1,4 +1,5 @@
 import express from 'express';
+import path from 'path';
 
 const port = 3003
 const host = 'localhost'
@@ -6,7 +7,7 @@ const app = express();
 
 var listaUsu = [];
 
-app.use(express.static('./public'));
+app.use(express.static(path.join(process.cwd(),'public')));
 
 app.use('/cadastrarUsu', (req, res) => {
     
